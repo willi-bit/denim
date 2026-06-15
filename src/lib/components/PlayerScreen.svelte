@@ -125,7 +125,9 @@
 		flex-direction: column;
 	}
 	.top {
-		padding: 22px 24px 0;
+		/* Player is a full-screen overlay with no StatusBar above it, so it owns the
+		   top safe area itself. */
+		padding: calc(22px + env(safe-area-inset-top)) 24px 0;
 	}
 	.top-row {
 		display: flex;
@@ -262,7 +264,7 @@
 	}
 
 	.next-wrap {
-		padding: 0 30px 30px;
+		padding: 0 30px calc(30px + env(safe-area-inset-bottom));
 	}
 	.next {
 		background: #fff;

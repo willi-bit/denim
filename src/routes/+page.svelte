@@ -73,17 +73,23 @@
 		overflow-y: auto;
 	}
 
-	/* On small phones, drop the chrome and let the app fill the viewport edge to edge. */
-	@media (max-width: 480px) {
+	/* On phones, drop the simulated bezel and let the app fill the viewport edge to edge. */
+	@media (max-width: 600px) {
 		.page {
 			padding: 0;
 		}
 		.phone {
 			width: 100%;
+			/* dvh tracks the *visible* area as the browser toolbar shows/hides, so the
+			   bottom nav never ends up behind the address bar. 100vh is the fallback. */
 			height: 100vh;
+			height: 100dvh;
 			max-height: none;
 			border-radius: 0;
 			box-shadow: none;
+			/* App-like: no accidental text selection when tapping/holding the UI. */
+			user-select: none;
+			-webkit-user-select: none;
 		}
 	}
 </style>

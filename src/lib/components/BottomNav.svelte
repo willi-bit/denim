@@ -47,7 +47,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		padding-bottom: 20px;
+		/* Grow past the fixed 88px so labels clear the home indicator on real phones. */
+		height: auto;
+		min-height: 88px;
+		padding-bottom: calc(20px + env(safe-area-inset-bottom));
 		z-index: 10;
 	}
 	.item {

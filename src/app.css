@@ -11,16 +11,29 @@ body {
 	padding: 0;
 	height: 100%;
 	font-family: 'Hanken Grotesk', sans-serif;
+	/* Stop iOS from auto-inflating text in landscape. */
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 
 body {
 	background: #19150f;
 	background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
 	background-size: 24px 24px;
+	/* Block the whole-page rubber-band / pull-to-refresh; scrolling lives in .appscroll. */
+	overscroll-behavior: none;
 }
 
 button {
 	font-family: inherit;
+	/* Native-feeling taps: no grey flash, no 300ms delay, no double-tap zoom. */
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	transition: transform 0.08s ease;
+}
+/* Subtle press feedback in place of hover, which phones don't have. */
+button:active {
+	transform: scale(0.97);
 }
 
 /* Hide scrollbars in the in-app scrolling area while keeping scroll behaviour. */
@@ -29,6 +42,9 @@ button {
 }
 .appscroll {
 	scrollbar-width: none;
+	-webkit-overflow-scrolling: touch;
+	/* Keep momentum scrolls inside the app instead of bouncing the page. */
+	overscroll-behavior: contain;
 }
 
 @keyframes popIn {

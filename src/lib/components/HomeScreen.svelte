@@ -107,7 +107,7 @@
 
 <style>
 	.wrap {
-		padding: 8px 24px 130px;
+		padding: 8px 24px calc(130px + env(safe-area-inset-bottom));
 	}
 	.header {
 		display: flex;

@@ -22,7 +22,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 18px 30px 4px;
+		/* Push the bar below the notch / Dynamic Island on real devices. env() is 0 in
+		   the desktop bezel preview, so the design there is unchanged. */
+		padding: calc(18px + env(safe-area-inset-top)) calc(30px + env(safe-area-inset-right)) 4px
+			calc(30px + env(safe-area-inset-left));
 		font-size: 14px;
 		font-weight: 800;
 		color: #1a1714;

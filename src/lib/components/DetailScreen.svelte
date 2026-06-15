@@ -77,7 +77,7 @@
 
 <style>
 	.root {
-		padding: 6px 0 150px;
+		padding: 6px 0 calc(150px + env(safe-area-inset-bottom));
 		position: relative;
 	}
 	.back-wrap {
@@ -240,7 +240,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: 18px 24px 26px;
+		padding: 18px 24px calc(26px + env(safe-area-inset-bottom));
 		background: linear-gradient(to top, #f4efe5 70%, rgba(244, 239, 229, 0));
 	}
 	.cta {

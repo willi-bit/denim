@@ -36,8 +36,10 @@
 
 <style>
 	.wrap {
-		padding: 60px 30px 40px;
-		min-height: 840px;
+		padding: 60px 30px calc(40px + env(safe-area-inset-bottom));
+		/* Fill whatever the device gives us and stay centered, instead of a fixed
+		   840px that overflows short phones. */
+		min-height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

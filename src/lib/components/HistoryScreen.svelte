@@ -81,7 +81,7 @@
 
 <style>
 	.wrap {
-		padding: 14px 24px 130px;
+		padding: 14px 24px calc(130px + env(safe-area-inset-bottom));
 	}
 	.title {
 		font-family: 'Archivo Black', sans-serif;
