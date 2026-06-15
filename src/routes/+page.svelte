@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import StatusBar from '$lib/components/StatusBar.svelte';
 	import BottomNav from '$lib/components/BottomNav.svelte';
 	import HomeScreen from '$lib/components/HomeScreen.svelte';
 	import PlansScreen from '$lib/components/PlansScreen.svelte';
@@ -21,7 +20,6 @@
 <div class="page">
 	<div class="phone">
 		<div class="appscroll">
-			<StatusBar />
 			{#if app.screen === 'home'}
 				<HomeScreen />
 			{:else if app.screen === 'plans'}
@@ -71,6 +69,9 @@
 		position: absolute;
 		inset: 0;
 		overflow-y: auto;
+		/* Status bar is now provided by the real device; reserve space so content
+		   clears the notch / Dynamic Island. env() is 0 in the desktop preview. */
+		padding-top: calc(12px + env(safe-area-inset-top));
 	}
 
 	/* On phones, drop the simulated bezel and let the app fill the viewport edge to edge. */

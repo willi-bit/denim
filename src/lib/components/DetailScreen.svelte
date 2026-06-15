@@ -140,22 +140,28 @@
 	}
 	.stats {
 		display: flex;
-		gap: 10px;
+		gap: 8px;
 		margin-top: 20px;
 	}
 	.stat {
 		flex: 1;
+		/* Let the boxes share the row equally instead of a long value (e.g. "Medium")
+		   forcing one box wider and pushing the others out of the card. */
+		min-width: 0;
 		background: rgba(255, 255, 255, 0.15);
 		border-radius: 16px;
-		padding: 12px 14px;
+		padding: 12px 11px;
 		backdrop-filter: blur(4px);
 		-webkit-backdrop-filter: blur(4px);
 	}
 	.stat-num {
 		font-family: 'Archivo Black', sans-serif;
-		font-size: 22px;
+		font-size: 19px;
 		color: #fff;
 		line-height: 1;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	.stat-lbl {
 		font-size: 11px;
@@ -164,6 +170,9 @@
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		margin-top: 4px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.seq {
