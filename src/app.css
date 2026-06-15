@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+	background: #19150f;
+	background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+	background-size: 24px 24px;
+}
+
+button {
+	font-family: inherit;
+}
+
+/* Hide scrollbars in the in-app scrolling area while keeping scroll behaviour. */
+.appscroll::-webkit-scrollbar {
+	display: none;
+}
+.appscroll {
+	scrollbar-width: none;
+}
+
+@keyframes popIn {
+	0% {
+		transform: scale(0.85);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes floatUp {
+	0% {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mkdir -p /tmp/design)",
+      "Bash(cp \"C:\\\\Users\\\\Famil\\\\.claude\\\\projects\\\\C--Programmieren-denim\\\\5d24c5db-c6c7-4653-a0b6-9f0a3297ac76\\\\tool-results\\\\webfetch-1781472293765-zlujvp.bin\" /tmp/design/design.tar.gz)",
+      "Bash(tar -tzf /tmp/design/design.tar.gz)",
+      "Bash(tar -xzf /tmp/design/design.tar.gz -C /tmp/design/)",
+      "Read(//tmp/design/**)",
+      "Bash(cp *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
